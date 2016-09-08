@@ -39,9 +39,15 @@ tfidfvectorizer = TfidfVectorizer(max_df=0.9,min_df=0.1,max_features=100000,stop
 
 
 tfidf_matrix = tfidfvectorizer.fit_transform(data)
+"Dumping the TFIDF Matrix after Creation"
+from sklearn.externals import joblib
 
+joblib.dump(tfidfvectorizer,'tfidfvectorizer.pkl')
 
-print("TFIDF Master Array generated")
+joblib.dump(tfidf_matrix,'tfidf_matrix.pkl')
+
+print("The Input data has been pickled into tfidf matrix and vectorizer")
+
 
 
 
